@@ -42,6 +42,14 @@ export default function RoomDetails() {
   const formattedCheckOut = Out.format("LLLL");
 
   //Form
+  let bodyFormData = new FormData();
+  bodyFormData.append({
+    ...data,
+    formattedCheckIn,
+    formattedCheckOut,
+    totalAdults,
+    totalKids,
+  });
   const ref = useRef(null);
   const {
     reset,
@@ -62,14 +70,12 @@ export default function RoomDetails() {
       totalKids,
       totalAdults,
     });
-    axios
-      .post("https://localhost:10000/hotels", {
-        ...data,
-        formattedCheckIn,
-        formattedCheckOut,
-        totalAdults,
-        totalKids,
-      })
+    axios({
+      method: "post",
+      url: "https://localhost:10000/hotels",
+      data: bodyFormData,
+      headers: { "Content-Type": "multipart/form-data" },
+    })
       .then(function (response) {
         console.log(response);
         setAxiosResponse(response);

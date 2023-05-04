@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Rooms from "./components/Rooms";
+
 import Home from "./pages/Home";
 import RoomDetails from "./pages/RoomDetails";
 
