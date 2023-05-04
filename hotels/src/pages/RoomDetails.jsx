@@ -63,7 +63,7 @@ export default function RoomDetails() {
       totalAdults,
     });
     axios
-      .post("https://localhost:5000/hotels", {
+      .post("https://localhost:10000/hotels", {
         ...data,
         formattedCheckIn,
         formattedCheckOut,
