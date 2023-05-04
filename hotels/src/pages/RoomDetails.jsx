@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import CheckIn from "../components/CheckIn";
@@ -26,6 +26,7 @@ const schema = yup.object({
     .required(),
 });
 export default function RoomDetails() {
+  const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
   const { totalRooms, checkIn, checkOut, totalKids, totalAdults } = useSelector(
     (store) => store
@@ -42,17 +43,9 @@ export default function RoomDetails() {
   const formattedCheckOut = Out.format("LLLL");
 
   //Form
-  let bodyFormData = new FormData();
-  bodyFormData.append({
-    ...data,
-    formattedCheckIn,
-    formattedCheckOut,
-    totalAdults,
-    totalKids,
-  });
+
   const ref = useRef(null);
   const {
-    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -62,20 +55,26 @@ export default function RoomDetails() {
 
   const onSubmit = (data) => {
     setLoading(true);
-    // console.log(checkIn, checkOut);
-    // console.log({
-    //   ...data,
-    //   formattedCheckIn,
-    //   formattedCheckOut,
-    //   totalKids,
-    //   totalAdults,
-    // });
-    axios({
-      method: "post",
-      url: "https://localhost:10000/hotels",
-      data: bodyFormData,
-      headers: { "Content-Type": "multipart/form-data" },
-    })
+    setData(data);
+
+    const formData = {
+      fullname: data.fullname,
+      phone: data.phone,
+      totalAdults: totalAdults,
+      totalKids: totalAdults,
+      formattedCheckIn: formattedCheckIn,
+      formattedCheckOut: formattedCheckOut,
+    };
+
+    axios
+      .post("http://localhost:10000/hotels", {
+        fullname: data.fullname,
+        phone: data.phone,
+        formattedCheckIn,
+        formattedCheckOut,
+        totalAdults,
+        totalKids,
+      })
       .then(function (response) {
         console.log(response);
         setAxiosResponse(response);
@@ -83,7 +82,7 @@ export default function RoomDetails() {
       .catch(function (error) {
         console.log(error);
       });
-    reset();
+
     setTimeout(() => {
       setLoading(false);
     }, 1000);
