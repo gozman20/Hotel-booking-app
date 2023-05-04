@@ -62,14 +62,14 @@ export default function RoomDetails() {
 
   const onSubmit = (data) => {
     setLoading(true);
-    console.log(checkIn, checkOut);
-    console.log({
-      ...data,
-      formattedCheckIn,
-      formattedCheckOut,
-      totalKids,
-      totalAdults,
-    });
+    // console.log(checkIn, checkOut);
+    // console.log({
+    //   ...data,
+    //   formattedCheckIn,
+    //   formattedCheckOut,
+    //   totalKids,
+    //   totalAdults,
+    // });
     axios({
       method: "post",
       url: "https://localhost:10000/hotels",
