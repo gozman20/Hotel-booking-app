@@ -44,6 +44,7 @@ export default function BookForm() {
         <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
           <KidsDropdown />
         </div>
+
         <button
           type="submit"
           className="btn btn-primary"
