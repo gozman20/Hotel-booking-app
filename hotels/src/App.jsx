@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 overflow-x-hidden">
       <Header />
 
       <RouterProvider router={router}></RouterProvider>

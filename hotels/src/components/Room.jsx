@@ -6,7 +6,7 @@ import { BsArrowsFullscreen, BsPeople } from "react-icons/bs";
 export default function Room({ room }) {
   const { id, name, image, size, maxPerson, description, price } = room;
   return (
-    <div className=" bg-white shadow-2xl min-h-[500px] group">
+    <div className=" bg-white shadow-2xl  group pb-4">
       {/* --image--- */}
       <div className="overflow-hidden">
         <img
@@ -16,7 +16,7 @@ export default function Room({ room }) {
         />
       </div>
       {/* -----details--- */}
-      <div className="bg-white shadow-lg max-w-[370px] h-[60px] mx-auto -translate-y-1/2 flex justify-center items-center uppercase tracking-[1px] font-semibold text-base font-tertiary">
+      <div className="bg-white shadow-lg h-[60px] mx-auto -translate-y-1/2 flex justify-center items-center uppercase tracking-[1px] font-semibold text-base font-tertiary">
         <div className="flex justify-between w-[80%]">
           {/* ---icon and text-- */}
           <div className="flex items-center gap-x-2">
@@ -55,7 +55,7 @@ export default function Room({ room }) {
       </div>
       <Link
         to={`/room/${id}`}
-        className="btn btn-secondary btn-sm max-w-[270px] mx-auto"
+        className="btn btn-secondary btn-sm max-w-[270px] mx-auto "
       >
         Book now from {price}
       </Link>

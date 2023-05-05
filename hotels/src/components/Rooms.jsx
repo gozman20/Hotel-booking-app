@@ -17,7 +17,7 @@ export default function Rooms() {
   console.log(totalRooms);
 
   return (
-    <section className="py-24  ">
+    <section className="py-6  ">
       {/* -----overlay and spinner--- */}
       <div className="flex justify-center items-center">
         {loading && (
@@ -27,21 +27,25 @@ export default function Rooms() {
         )}
       </div>
 
-      <div className="container  mx-auto lg:px-0 ">
-        <div className="z-50 text-center">
-          <div className="font-tertiary uppercase tex-[15px] tracking-[6px]">
+      <div className="  ">
+        <div className=" text-center">
+          <div className="font-tertiary uppercase text-[15px] tracking-[6px]">
             Hotel and Spa Adina
           </div>
-          <h2 className="font-primary text-[45px] mb-4">Rooms & Suites</h2>
+          <h2 className="font-primary text-[30px] md:text-[45px] mb-3">
+            Rooms & Suites
+          </h2>
         </div>
         {/* grid */}
-        <div className="grid grid-cols-1 max-w-sm  mx-auto gap-[30px]  lg:grid-cols-3 lg:max-w-none lg:mx-0">
-          {availableRooms &&
-            availableRooms.map((room) => (
-              <div key={room.id}>
-                <Room room={room} />
-              </div>
-            ))}
+        <div className="">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-[10px]">
+            {availableRooms &&
+              availableRooms.map((room) => (
+                <div key={room.id} className="grid place-items-center">
+                  <Room room={room} />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     </section>

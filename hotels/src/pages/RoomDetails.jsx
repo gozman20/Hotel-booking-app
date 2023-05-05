@@ -48,6 +48,7 @@ export default function RoomDetails() {
 
   const ref = useRef(null);
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors },
@@ -78,11 +79,12 @@ export default function RoomDetails() {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
+    reset();
   };
 
   return (
     <>
-      <section className="relative">
+      <section className="relative ">
         <ScrollToTop />
         <div className="bg-room bg-cover h-[560px] relative flex justify-center items-center">
           {/* -----overlay--- */}
@@ -93,7 +95,7 @@ export default function RoomDetails() {
           </h1>
         </div>
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row h-full py-24 gap-x-4">
+          <div className="flex flex-col lg:flex-row h-full py-4 gap-x-4">
             {/* ---left--- */}
             <div className="w-full  lg:w-[60%] px-6  ">
               <h2 className="h2">{name}</h2>
@@ -123,7 +125,7 @@ export default function RoomDetails() {
                   <h3 className="h3">Reservation</h3>
                   <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col space-y-6 mb-4 "
+                    className="flex flex-col lg:space-y-6 space-y-3 mb-4 "
                   >
                     {/* overlay--- */}
                     {loading && (

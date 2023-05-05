@@ -31,7 +31,7 @@ export default function BookForm() {
 
   return (
     <div className="grid place-items-center">
-      <form className="h-[150px]  w-[60%] lg:h-[40px] ">
+      <form className="h-[110px]  md:w-[80%] lg:h-[40px] w-full ">
         <div className="flex flex-col w-full h-full lg:flex-row border-[4px] border-b-accent ">
           {/* <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
           <CheckIn />
