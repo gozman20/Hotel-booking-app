@@ -125,7 +125,7 @@ export default function RoomDetails() {
                   <h3 className="h3">Reservation</h3>
                   <form
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col lg:space-y-6 space-y-3 mb-4 "
+                    className="flex flex-col lg:space-y-6 space-y-5 mb-4 "
                   >
                     {/* overlay--- */}
                     {loading && (
@@ -159,7 +159,7 @@ export default function RoomDetails() {
                         {errors.phone?.message}
                       </p>
                     </div>
-                    <div className="h-[30px] md:h-[50px]">
+                    <div className="h-[30px] md:h-[50px] mb-2">
                       <CheckIn />
                     </div>
                     <div className="h-[30px] md:h-[50px]">
