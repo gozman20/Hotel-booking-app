@@ -6,8 +6,8 @@ const initialState = {
   availableRooms: [],
   totalKids: "0 kids",
   totalAdults: "1 Adult",
-  checkIn: new Date(),
-  checkOut: new Date(),
+  checkIn: "",
+  checkOut: "",
   total: 0,
   loading: false,
 };

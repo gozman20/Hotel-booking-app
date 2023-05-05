@@ -30,29 +30,31 @@ export default function BookForm() {
   console.log(newRooms);
 
   return (
-    <form className="h-[300px]  w-full lg:h-[70px]">
-      <div className="flex flex-col w-full h-full lg:flex-row border-[4px] border-b-accent ">
-        <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
+    <div className="grid place-items-center">
+      <form className="h-[150px]  w-[60%] lg:h-[40px] ">
+        <div className="flex flex-col w-full h-full lg:flex-row border-[4px] border-b-accent ">
+          {/* <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
           <CheckIn />
         </div>
         <div className="flex-1  border-r  border-[2px] border-b-accent lg:border-none">
           <CheckOut />
-        </div>
-        <div className="flex-1  border-r  border-[2px] border-b-accent lg:border-none">
-          <AdultsDropdown />
-        </div>
-        <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
-          <KidsDropdown />
-        </div>
+        </div> */}
+          <div className="flex-1  border-r  border-[2px] border-b-accent lg:border-none">
+            <AdultsDropdown />
+          </div>
+          <div className="flex-1 border-r  border-[2px] border-b-accent lg:border-none">
+            <KidsDropdown />
+          </div>
 
-        <button
-          type="submit"
-          className="btn btn-primary"
-          onClick={handleSubmit}
-        >
-          Check now
-        </button>
-      </div>
-    </form>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={handleSubmit}
+          >
+            Check now
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

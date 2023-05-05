@@ -26,7 +26,6 @@ const schema = yup.object({
     .required(),
 });
 export default function RoomDetails() {
-  const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
   const { totalRooms, checkIn, checkOut, totalKids, totalAdults } = useSelector(
     (store) => store
@@ -37,10 +36,13 @@ export default function RoomDetails() {
   console.log(selectedRoom);
   const { name, description, facilities, imageLg, price } = selectedRoom;
   //format the date
-  const In = moment(checkIn, "YYYY-MM-DD");
-  const formattedCheckIn = In.format("LLLL");
-  const Out = moment(checkOut, "YYYY-MM-DD");
-  const formattedCheckOut = Out.format("LLLL");
+  // const In = moment(checkIn, "YYYY-MM-DD");
+  // const formattedCheckIn = In.format("LLLL");
+  // const Out = moment(checkOut, "YYYY-MM-DD");
+  // const formattedCheckOut = Out.format("LLLL");
+
+  const formattedCheckIn = checkIn;
+  const formattedCheckOut = checkOut;
 
   //Form
 
@@ -55,16 +57,6 @@ export default function RoomDetails() {
 
   const onSubmit = (data) => {
     setLoading(true);
-    setData(data);
-
-    const formData = {
-      fullname: data.fullname,
-      phone: data.phone,
-      totalAdults: totalAdults,
-      totalKids: totalAdults,
-      formattedCheckIn: formattedCheckIn,
-      formattedCheckOut: formattedCheckOut,
-    };
 
     axios
       .post("http://localhost:10000/hotels", {
@@ -90,7 +82,7 @@ export default function RoomDetails() {
 
   return (
     <>
-      <section className="">
+      <section className="relative">
         <ScrollToTop />
         <div className="bg-room bg-cover h-[560px] relative flex justify-center items-center">
           {/* -----overlay--- */}
@@ -141,7 +133,7 @@ export default function RoomDetails() {
                       </div>
                     )}
 
-                    <div className="h-[40px] md:h-[60px] ">
+                    <div className="h-[30px] md:h-[50px] ">
                       <input
                         type="text"
                         className="h-full w-full text-black pl-8 outline-none"
@@ -153,19 +145,7 @@ export default function RoomDetails() {
                         {errors.fullname?.message}
                       </p>
                     </div>
-                    <div className="h-[40px] md:h-[60px]">
-                      <CheckIn />
-                    </div>
-                    <div className="h-[40px] md:h-[60px]">
-                      <CheckOut />
-                    </div>
-                    <div className="h-[40px] md:h-[60px]">
-                      <AdultsDropdown />
-                    </div>
-                    <div className="h-[40px] md:h-[60px]">
-                      <KidsDropdown />
-                    </div>
-                    <div className="h-[40px] md:h-[60px] ">
+                    <div className="h-[30px] md:h-[50px] ">
                       <input
                         type="number"
                         placeholder="Phone"
@@ -177,6 +157,19 @@ export default function RoomDetails() {
                         {errors.phone?.message}
                       </p>
                     </div>
+                    <div className="h-[30px] md:h-[50px]">
+                      <CheckIn />
+                    </div>
+                    <div className="h-[30px] md:h-[50px]">
+                      <CheckOut />
+                    </div>
+                    <div className="h-[30px] md:h-[50px]">
+                      <AdultsDropdown />
+                    </div>
+                    <div className="h-[30px] md:h-[50px]">
+                      <KidsDropdown />
+                    </div>
+
                     <div className="h-[50px]">
                       {" "}
                       <button

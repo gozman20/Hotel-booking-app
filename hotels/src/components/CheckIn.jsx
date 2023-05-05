@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
+import parseISO from "date-fns/parseISO";
 import moment from "moment";
 import "react-datepicker/dist/react-datepicker.css";
 import "../datepicker.css";
@@ -10,10 +11,17 @@ import { useDispatch, useSelector } from "react-redux";
 export default function CheckIn() {
   const { checkIn } = useSelector((store) => store);
   const dispatch = useDispatch();
-  const [startDate, setStartDate] = useState(checkIn);
-  const m = moment(startDate, "YYYY-MM-DD");
-  console.log(m.format("LLLL"));
+  const [startDate, setStartDate] = useState(new Date());
+  console.log(startDate);
+  //format the date
+  const In = moment(startDate, "YYYY-MM-DD");
+  const formattedCheckIn = In.format("LLLL");
+  //  const Out = moment(endDate, "YYYY-MM-DD");
+  //  const formattedCheckOut = Out.format("LLLL");
 
+  useEffect(() => {
+    dispatch(setCheckIn(formattedCheckIn));
+  });
   return (
     <div className="relative flex justify-end items-center h-full ">
       <div className="absolute z-10 pr-8">
@@ -24,12 +32,9 @@ export default function CheckIn() {
 
       <DatePicker
         className="w-full h-full"
-        placeholderText="Check In"
+        placeholderText={checkIn}
         selected={startDate}
-        onChange={(date) => {
-          setStartDate(date);
-          dispatch(setCheckIn(date));
-        }}
+        onChange={(date) => setStartDate(date)}
       />
     </div>
   );
