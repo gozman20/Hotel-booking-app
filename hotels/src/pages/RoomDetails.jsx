@@ -94,7 +94,7 @@ export default function RoomDetails() {
             {name}
           </h1>
         </div>
-        <div className="container mx-auto">
+        <div className="p-6">
           <div className="flex flex-col lg:flex-row h-full py-4 gap-x-4">
             {/* ---left--- */}
             <div className="w-full  lg:w-[60%] px-6  ">
