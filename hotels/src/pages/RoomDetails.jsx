@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+
 import moment from "moment";
 import { useSelector } from "react-redux";
 import CheckIn from "../components/CheckIn";
@@ -21,6 +22,7 @@ const schema = yup.object({
   phone: yup
     .number()
     .positive()
+
     .integer()
     .typeError("Phone number is empty")
     .required(),
@@ -33,7 +35,7 @@ export default function RoomDetails() {
   const [axiosResponse, setAxiosResponse] = useState("");
   const { id } = useParams();
   const selectedRoom = totalRooms.find((room) => room.id === Number(id));
-  console.log(selectedRoom);
+
   const { name, description, facilities, imageLg, price } = selectedRoom;
   //format the date
   // const In = moment(checkIn, "YYYY-MM-DD");
@@ -55,7 +57,9 @@ export default function RoomDetails() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
+  {
+    console.log(<ImSpinner6 />);
+  }
   const onSubmit = (data) => {
     setLoading(true);
 
@@ -84,11 +88,11 @@ export default function RoomDetails() {
 
   return (
     <>
-      <section className="relative ">
+      <section className=" relative">
+        {/* -----overlay--- */}
+        {loading && <div className=" absolute h-full w-full bg-black/70"></div>}
         <ScrollToTop />
-        <div className="bg-room bg-cover h-[560px] relative flex justify-center items-center">
-          {/* -----overlay--- */}
-          <div className=" absolute h-full w-full bg-black/70"></div>
+        <div className="bg-room bg-cover h-[560px]  flex justify-center items-center">
           {/* -----title--- */}
           <h1 className="text-white font-primary text-6xl z-20 text-center">
             {name}
@@ -105,15 +109,13 @@ export default function RoomDetails() {
                 <h3 className="h3">Room Facilties</h3>
                 <p className="mb-12">{description}</p>
                 <div className="grid grid-cols-3 gap-3 mb-12">
-                  {facilities.map((item, index) => {
-                    const { name, icon } = item;
-                    return (
-                      <div className="flex items-center gap-x-3 " key={index}>
-                        <div className="text-3xl text-accent ">{icon}</div>
-                        <div className="text-base text-accent">{name}</div>
-                      </div>
-                    );
-                  })}
+                  {facilities.map((item, index) => (
+                    <div className="flex items-center gap-x-3 " key={index}>
+                      <div className="text-3xl text-accent "></div>
+                      {console.log(item)}
+                      <div className="text-base text-accent">{item.name}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -127,7 +129,7 @@ export default function RoomDetails() {
                     onSubmit={handleSubmit(onSubmit)}
                     className="flex flex-col lg:space-y-6 space-y-5 mb-4 "
                   >
-                    {/* overlay--- */}
+                    {/* spinner--- */}
                     {loading && (
                       <div className="bg-black/70 absolute w-full h-full z-10 text-white grid place-items-center">
                         {" "}
@@ -135,11 +137,11 @@ export default function RoomDetails() {
                       </div>
                     )}
 
-                    <div className="h-[30px] md:h-[50px] ">
+                    <div className="h-[40px] md:h-[50px] ">
                       <input
                         type="text"
                         className="h-full w-full text-black pl-8 outline-none"
-                        placeholder="fullname "
+                        placeholder="Your name "
                         ref={ref}
                         {...register("fullname")}
                       />
@@ -147,11 +149,11 @@ export default function RoomDetails() {
                         {errors.fullname?.message}
                       </p>
                     </div>
-                    <div className="h-[30px] md:h-[50px] ">
+                    <div className="h-[40px] md:h-[50px] ">
                       <input
                         type="number"
                         placeholder="Phone"
-                        className="w-full h-full  pl-8 outline-none"
+                        className="w-full h-full  pl-8 outline-none "
                         // ref={ref}
                         {...register("phone")}
                       />
@@ -159,16 +161,16 @@ export default function RoomDetails() {
                         {errors.phone?.message}
                       </p>
                     </div>
-                    <div className="h-[30px] md:h-[50px] mb-2">
+                    <div className="h-[40px] md:h-[50px] mb-2">
                       <CheckIn />
                     </div>
-                    <div className="h-[30px] md:h-[50px]">
+                    <div className="h-[40px] md:h-[50px]">
                       <CheckOut />
                     </div>
-                    <div className="h-[30px] md:h-[50px]">
+                    <div className="h-[40px] md:h-[50px]">
                       <AdultsDropdown />
                     </div>
-                    <div className="h-[30px] md:h-[50px]">
+                    <div className="h-[40px] md:h-[50px]">
                       <KidsDropdown />
                     </div>
 
