@@ -82,8 +82,8 @@ export default function RoomDetails() {
 
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
-    reset();
+      reset();
+    }, 5000);
   };
 
   return (
@@ -133,7 +133,7 @@ export default function RoomDetails() {
                   >
                     {/* spinner--- */}
                     {loading && (
-                      <div className=" absolute  w-full h-full z-50 text-white grid place-items-center">
+                      <div className="  top-[70%]  w-full h-full z-50 text-white grid place-items-center">
                         {" "}
                         <ImSpinner6 className="animate-spin font-bold text-[30px]" />
                       </div>
