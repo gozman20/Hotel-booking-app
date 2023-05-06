@@ -91,7 +91,7 @@ export default function RoomDetails() {
       <section className=" relative">
         {/* -----overlay--- */}
         {loading && (
-          <div className="z-20 absolute h-full w-full bg-black/70"></div>
+          <div className="z-10 absolute h-full w-full bg-black/70"></div>
         )}
         <ScrollToTop />
         <div className="bg-room bg-cover h-[560px]  flex justify-center items-center">
@@ -133,7 +133,7 @@ export default function RoomDetails() {
                   >
                     {/* spinner--- */}
                     {loading && (
-                      <div className=" absolute w-full h-full z-10 text-white grid place-items-center">
+                      <div className=" absolute  w-full h-full z-50 text-white grid place-items-center">
                         {" "}
                         <ImSpinner6 className="animate-spin font-bold text-[30px]" />
                       </div>
