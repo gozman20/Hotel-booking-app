@@ -15,7 +15,7 @@ export default function Header() {
     <header
       className={`${
         header ? "bg-white py-6" : "bg-none py-8"
-      } fixed z-50 w-full transition-all duration-500`}
+      } fixed z-40 w-full transition-all duration-500`}
     >
       <div className="container mx-auto flex flex-col justify-start items-center gap-y-6 lg:gap-y-0 lg:flex-row lg:justify-between ">
         {/* ---logo--- */}
