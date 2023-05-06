@@ -144,6 +144,7 @@ export default function RoomDetails() {
                         className="h-full w-full text-black pl-8 outline-none"
                         placeholder="Your name "
                         ref={ref}
+                        autoComplete="new-password"
                         {...register("fullname")}
                       />
                       <p className="text-red-500 text-sm">
