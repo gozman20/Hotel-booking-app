@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function CheckOut() {
   const { checkOut } = useSelector((store) => store);
   const dispatch = useDispatch();
-  const [endDate, setEndDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(false);
   console.log(endDate);
   //format the date
   // const In = moment(checkIn, "YYYY-MM-DD");
@@ -33,7 +33,7 @@ export default function CheckOut() {
 
       <DatePicker
         className="w-full h-full"
-        placeholderText="Check Out"
+        placeholderText={"Check Out"}
         selected={endDate}
         onChange={(date) => setEndDate(date)}
       />

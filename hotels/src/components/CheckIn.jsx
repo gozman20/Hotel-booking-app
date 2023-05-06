@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function CheckIn() {
   const { checkIn } = useSelector((store) => store);
   const dispatch = useDispatch();
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(false);
   console.log(startDate);
   //format the date
   const In = moment(startDate, "YYYY-MM-DD");
@@ -32,7 +32,7 @@ export default function CheckIn() {
 
       <DatePicker
         className="w-full h-full"
-        placeholderText="check In"
+        placeholderText={"check In"}
         selected={startDate}
         onChange={(date) => setStartDate(date)}
       />
