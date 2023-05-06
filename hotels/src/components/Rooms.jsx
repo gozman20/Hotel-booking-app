@@ -21,8 +21,8 @@ export default function Rooms() {
       {/* -----overlay and spinner--- */}
       <div className="flex justify-center items-center">
         {loading && (
-          <div className="h-screen w-[100%] z-50 fixed bottom-0 top-0 bg-black/90 flex justify-center items-center">
-            <SpinnerDotted color="brown" />
+          <div className="h-screen w-[100%] z-50 fixed bottom-0 top-0 bg-black/70 flex justify-center items-center">
+            <SpinnerDotted color="white" />
           </div>
         )}
       </div>

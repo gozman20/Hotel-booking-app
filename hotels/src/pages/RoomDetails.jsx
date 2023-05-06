@@ -133,12 +133,11 @@ export default function RoomDetails() {
                   >
                     {/* spinner--- */}
                     {loading && (
-                      <div className="  top-[70%]  w-full h-full z-50 text-white grid place-items-center">
+                      <div className=" top-[30px] absolute  w-full h-full z-50 text-white grid place-items-center">
                         {" "}
                         <ImSpinner6 className="animate-spin font-bold text-[30px]" />
                       </div>
                     )}
-
                     <div className="h-[40px] md:h-[50px] ">
                       <input
                         type="text"
