@@ -133,7 +133,7 @@ export default function RoomDetails() {
                   >
                     {/* spinner--- */}
                     {loading && (
-                      <div className=" top-[30px] absolute  w-full h-full z-50 text-white grid place-items-center">
+                      <div className=" top-[300px] left-[50%] absolute  w-full h-full z-50 text-white  ">
                         {" "}
                         <ImSpinner6 className="animate-spin font-bold text-[30px]" />
                       </div>
