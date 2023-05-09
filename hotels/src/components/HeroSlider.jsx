@@ -40,7 +40,7 @@ export default function HeroSlider() {
         delay: 3000,
         disableOnInteraction: false,
       }}
-      className="heroSlider h-[600px] lg:h-[860px]  "
+      className="heroSlider h-[650px] lg:h-[860px]  "
     >
       {slides.map((slide, index) => (
         <SwiperSlide
@@ -55,7 +55,7 @@ export default function HeroSlider() {
               {slide.title}
             </h1>
             <Link
-              to="/room"
+              to="/room?type=room"
               className="btn btn-lg btn-primary mx-auto w-[200px]"
             >
               {slide.btnText}

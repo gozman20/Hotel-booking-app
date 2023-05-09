@@ -10,7 +10,7 @@ export default function Allrooms() {
     <div className="p-4">
       <div className=" text-center">
         <div className="font-tertiary uppercase text-[15px] tracking-[6px]">
-          Hotel and Spa Adina
+          Welcome to Hotel Adina
         </div>
         <h2 className="font-primary text-[30px] md:text-[45px] mb-3">
           Make a reservtion now
