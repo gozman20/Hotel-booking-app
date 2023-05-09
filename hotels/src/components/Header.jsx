@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import logoDark from "../assets/logo-dark.svg";
 import logoWhite from "../assets/logo-white.svg";
+import { useSearchParams, Link } from "react-router-dom";
 
 export default function Header() {
   const [header, setheader] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -32,18 +34,36 @@ export default function Header() {
             header ? "text-primary" : "text-white"
           } flex items-center gap-x-3 lg:gap-x-8 tracking-[3px]text-[15px] uppercase font-tertiary`}
         >
-          <a href="" className="hover:text-accent transition">
+          <Link
+            to="/"
+            // onClick={() => setSearchParams({})}
+            className="hover:text-accent transition"
+          >
             Home
-          </a>
-          <a href="" className="hover:text-accent transition">
-            Rooms
-          </a>
-          <a href="" className="hover:text-accent transition">
+          </Link>
+
+          <Link
+            to="/room/?type=restaurants"
+            // onClick={() => {
+            //   setSearchParams({ type: "restaurants" });
+            // }}
+            className="hover:text-accent transition"
+          >
             Restaurant
-          </a>
-          <a href="" className="hover:text-accent transition">
-            Spa
-          </a>
+          </Link>
+          <Link
+            to="/room/?type=bar"
+            // onClick={() => setSearchParams({ type: "bar" })}
+            className="hover:text-accent transition"
+          >
+            Bar
+          </Link>
+          <button
+            onClick={() => setSearchParams({ type: "room" })}
+            className="hover:text-accent transition"
+          >
+            ROOMS
+          </button>
           <a href="" className="hover:text-accent transition">
             Contact
           </a>

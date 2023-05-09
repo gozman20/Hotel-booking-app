@@ -32,7 +32,7 @@ export default function CheckIn() {
 
       <DatePicker
         className="w-full h-full"
-        placeholderText={"check In"}
+        placeholderText={"Check In"}
         selected={startDate}
         onChange={(date) => setStartDate(date)}
       />

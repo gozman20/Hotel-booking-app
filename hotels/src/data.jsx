@@ -15,6 +15,14 @@ import Room7Img from "./assets/img/rooms/7.png";
 import Room7ImgLg from "./assets/img/rooms/7-lg.png";
 import Room8Img from "./assets/img/rooms/8.png";
 import Room8ImgLg from "./assets/img/rooms/8-lg.png";
+import restaurant1 from "./assets/img/restaurants/restaurant-1.jpg";
+import restaurant2 from "./assets/img/restaurants/restaurant-2.jpg";
+import restaurant3 from "./assets/img/restaurants/restaurant-3.jpg";
+import restaurant4 from "./assets/img/restaurants/restaurant-4.jpg";
+import bar1 from "./assets/img/bars/bar-1.jpg";
+import bar2 from "./assets/img/bars/bar-2.jpg";
+import bar3 from "./assets/img/bars/bar-3.jpg";
+// import bar4 from "./assets/img/bar/bar-4.jpg";
 // import icons
 import {
   FaWifi,
@@ -31,6 +39,7 @@ export const roomData = [
   {
     id: 1,
     name: "Superior Room",
+    type: "room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
     facilities: [
@@ -51,7 +60,9 @@ export const roomData = [
   },
   {
     id: 2,
+    type: "room",
     name: "Signature Room",
+
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
     facilities: [
@@ -72,6 +83,7 @@ export const roomData = [
   },
   {
     id: 3,
+    type: "room",
     name: "Deluxe Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -93,6 +105,7 @@ export const roomData = [
   },
   {
     id: 4,
+    type: "room",
     name: "Luxury Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -114,6 +127,7 @@ export const roomData = [
   },
   {
     id: 5,
+    type: "room",
     name: "Luxury Suite Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -135,6 +149,7 @@ export const roomData = [
   },
   {
     id: 6,
+    type: "room",
     name: "Deluxe Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -156,6 +171,7 @@ export const roomData = [
   },
   {
     id: 7,
+    type: "room",
     name: "Luxury Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea ccusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -177,6 +193,7 @@ export const roomData = [
   },
   {
     id: 8,
+    type: "room",
     name: "Deluxe Room",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit.Ea placeat eos sed voluptas unde veniam eligendi a. Quaerat molestiae hic omnis temporibus quos consequuntur nam voluptatum ea accusamus, corrupti nostrum eum placeat quibusdam quis beatae quae labore earum architecto aliquid debitis.",
@@ -195,5 +212,61 @@ export const roomData = [
     price: 499,
     image: Room8Img,
     imageLg: Room8ImgLg,
+  },
+  {
+    id: 9,
+    name: "Le Bernardin",
+    type: "restaurants",
+    Open: "Daily",
+    img: restaurant1,
+  },
+  {
+    id: 10,
+    name: "Lord of the Fries",
+    type: "restaurants",
+    Open: "Daily",
+    img: restaurant2,
+  },
+  {
+    id: 11,
+    name: "Local Food Spot",
+    type: "restaurants",
+    Open: "Daily",
+    img: restaurant3,
+  },
+  {
+    id: 12,
+    name: "The Gateway",
+    type: "restaurants",
+    Open: "Daily",
+    img: restaurant4,
+  },
+  {
+    id: 13,
+    name: "The Beerhouse ",
+    type: "bar",
+    Open: "Daily",
+    img: bar1,
+  },
+  {
+    id: 14,
+    name: "Avenue Tavern",
+    type: "bar",
+    Open: "Daily",
+    img: bar2,
+  },
+  {
+    id: 15,
+    name: "Executive ",
+    type: "bar",
+    Open: "Mon-Fri",
+    img: bar3,
+  },
+  {
+    id: 16,
+    name: "Aero Club Bar",
+    type: "bar",
+    Open: "Sat and Sun",
+    img: bar3,
   },
 ];

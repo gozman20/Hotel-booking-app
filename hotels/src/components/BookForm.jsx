@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CheckIn from "./CheckIn";
 import AdultsDropdown from "./AdultsDropdown";
 import CheckOut from "./CheckOut";
+import { useSearchParams } from "react-router-dom";
 import KidsDropdown from "./KidsDropdown";
 import { useSelector, useDispatch } from "react-redux";
 import { setAvailableRooms, setLoading } from "../features/RoomSlice";
@@ -10,7 +11,7 @@ export default function BookForm() {
   const dispatch = useDispatch();
   const [newRooms, setNewRooms] = useState();
   const { total, totalRooms } = useSelector((store) => store);
-
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
     // dispatch(update(newRooms));
     dispatch(setAvailableRooms(newRooms));
@@ -18,14 +19,15 @@ export default function BookForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    setSearchParams({ type: "room" });
     dispatch(setLoading(true));
 
     const availableRooms = totalRooms.filter((room) => total <= room.maxPerson);
+    console.log(availableRooms);
     setTimeout(() => {
       setNewRooms(availableRooms);
       dispatch(setLoading(false));
-    }, 3000);
+    }, 1000);
   }
   console.log(newRooms);
 
